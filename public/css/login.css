@@ -1,0 +1,357 @@
+
+
+* {
+    margin: 0px ;
+    padding: 0px ;
+    box-sizing: border-box ;
+    }
+
+body{
+    
+    font-family: 'Roboto', sans-serif;
+    background-color: #ebebeb;
+    
+
+}
+header {
+        display: flex;
+        background-color: #EAC926;
+        box-sizing: border-box;
+        height: 100%;
+        flex-direction: column;
+        
+}
+.header_superior{
+    background-color: #EAC926;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
+
+.lupita{
+       text-align: justify;
+       background-color: azure;
+}
+.elbuscador{
+   align-items: baseline;  
+   text-align: justify;
+   max-width: 50%;
+   
+}
+
+.laImagen{
+    width: 50vw;
+    max-width: 130px;
+    
+}
+.search{
+    border: none;
+    border-radius: 5px;
+    width: 70%;
+    max-width: 130px;
+    margin-left:7px;
+    text-align: left;
+}
+.copi{
+    
+    font-size: 12px;
+    text-align: right;
+    
+}
+
+
+.header_inferior{
+    background-color: #EAC926;
+    display: flex;
+    font-size: 12px;
+    justify-content: space-around;
+}
+
+
+
+
+
+
+
+h2{
+    display: inline;
+}
+
+
+
+.burger-menu{
+    color: aliceblue;
+    border-block-color:#03264C ;
+    text-align: center;
+    display: block;
+    padding: 10px;
+    ;
+            
+}
+
+#menu_ {
+    background-color: #03264C;
+    padding: 10px;
+    border-radius: 30%;
+}
+
+
+.link {
+    color: black;
+    text-decoration: none;
+}
+
+.navegador_izquierda {
+    display:none;
+    
+}
+
+.navegador_derecha {
+    display:none;
+    
+}
+.links {
+    display: block;
+    color: black;
+    text-decoration: none;
+    text-decoration-style: none ;
+
+}
+
+
+
+ 
+
+
+img  {
+    display: block;
+    max-width: 100%;
+    
+    
+}
+
+body {
+    background-color:#ebebeb60 ;
+   
+    
+}
+
+
+form .main-control {
+  
+    display: flex;
+    flex-direction: column;
+    border: none;
+    font-family: "Roboto";
+    max-width: 70%;
+    margin:0 auto;
+
+    
+
+}
+
+.titulo{
+    display: none;
+}
+
+form fieldset label {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+form fieldset.button{
+    border: none;
+    display: flex;
+    
+    
+}
+
+form fieldset .button-1 {
+    color: azure;
+    display: inline;
+    background-color:#1259c3 ;
+    border-radius: 10%;
+    border: none;
+    padding: 8px 8px;
+    max-width: 100%;
+    margin:0 auto;
+
+}
+label {
+    font-family: "Roboto";
+    padding: 5px;
+}
+
+.button-1 {
+    transition: all 300ms;
+}
+.button-1:hover {
+
+    background-color: #0022AA;
+}
+.entradas{
+    padding: 8px;
+    border: none;
+    margin: 8px 3px;
+    border-radius: 5px;
+    flex:1 0 auto;
+    font-size: 16px;
+    font-style:oblique;
+    
+
+}
+
+
+/* queries para tablet */
+@media  (min-width:361px) {
+    
+
+    article {
+        max-width: 45%;
+    }
+
+    .elpie{
+    
+        text-align: center;
+        justify-content: center;
+        
+    
+        
+    }
+    .header_inferior{
+        display: flex;
+        justify-content: space-between;
+        font-size:  9px;
+        margin-bottom: 10px;
+        padding: 2px 10px;
+    }
+    .navegador_derecha{
+        display: flex;
+        flex-direction: row;  
+         
+          
+    }
+    .navegador_izquierda{
+        display: flex;
+        
+        
+    }
+    .links{
+        margin:0px 4px;
+
+    }
+    .burger-menu {
+        display: none;
+    }
+    .search {
+        max-width: 170px;
+        
+
+    }
+    .copi{
+        max-width: 30%;
+    }
+
+    .main-form{
+        margin:auto 20%;
+    }
+}
+
+
+@media  (min-width:769px) {
+    
+
+    
+    article {
+        max-width: 20%;
+        margin: 1px;
+        
+    }
+
+    .header_superior{
+        background-color: #EAC926;
+        display: flex;
+        justify-content: space-between;
+        
+        padding: 15px 5px ;
+    
+    }
+    .elbuscador{
+        
+        margin: 0 auto;
+    }
+    .laImagen {
+        max-width: 250px;
+        width:40vw;
+        margin-left: 7px;
+    }
+    .copi{
+        width: 30vw;
+        font-size: 16px;
+    }
+
+    .header_inferior{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 16px;
+        padding: 2px 10px;
+        
+    }
+    .navegador_derecha{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;  
+        
+        
+        
+    }
+    .navegador_izquierda{
+        display: flex;
+        justify-content: space-between;  
+        
+    }
+
+    .links{
+        margin:0px 7px;
+        
+
+    }
+    .burger-menu{
+        display: none;
+    }
+
+   
+
+    .mainfooter{
+        display: flex;
+        flex-direction: row;
+        max-width: 100%;
+        margin:5px;
+        padding:5px;
+        justify-content: space-around;
+        align-items:center ;
+    }
+    .footeritem{
+        margin: 10px 15px;
+        padding: 2px 10px;
+
+    }
+    .search {
+        max-width: 170px;
+        width: 35vw;
+
+    }
+
+    .main-form{
+        margin:auto 20%;
+    }
+    
+
+}

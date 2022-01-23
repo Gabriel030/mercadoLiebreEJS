@@ -1,0 +1,14 @@
+
+
+<% listOnSale.forEach(product => { %>
+   
+    <article class ="main_article">
+        
+        <img src="<%=product.image%> " alt="cafetera" id="bordeinferior">
+        <picture class="camion" ><i  class="fas fa-truck" ></i></picture>     
+        <p class ="precios">$ <%=product.price %> </p>
+        <p class ="descuentos"> <%=product.discount %> off</p>
+        <p class = "descripciones"><%= product.description %></p>   
+
+    </article>
+<% }) %>

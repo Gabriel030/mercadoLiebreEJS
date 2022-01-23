@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "isAdmin": false,
+    "name": "Maxwell Kingstone",
+    "email": "maxwell-kingstone@gmail.com",
+    "userName": "Maxwell030",
+    "birth": "20-02-1980",
+    "adress": "av. liverpool 5878, Ingland",
+    "profile": "comprador",
+    "interest": "electro",
+    "file": null,
+    "password": 1234
+  },
+  {
+    "id": 2,
+    "isAdmin": false,
+    "name": "Rusbelt makinsay",
+    "email": "Rusbelt-makinsay@gmail.com",
+    "userName": "Rusbel030",
+    "birth": "20-02-1980",
+    "adress": "av. robbery 5878, Spain",
+    "profile": "comprador",
+    "interest": "electro",
+    "file": null,
+    "password": 5456856
+  },
+  {
+    "id": 3,
+    "isAdmin": false,
+    "name": "Betany Smith",
+    "email": "BetanySmith@gmail.com",
+    "userName": "Maxwell030",
+    "birth": "20-02-1980",
+    "adress": "av. liverpool 5878, Ingland",
+    "profile": "comprador",
+    "interest": "electro",
+    "file": null,
+    "password": 1234
+  },
+  {
+    "id": 4,
+    "isAdmin": false,
+    "name": "Tomy Gury",
+    "email": "TomyGury@gmail.com",
+    "userName": "Maxwell030",
+    "birth": "20-02-1980",
+    "adress": "av. liverpool 5878, Ingland",
+    "profile": "comprador",
+    "interest": "electro",
+    "file": null,
+    "password": 1234
+  },
+  {
+    "id": 5,
+    "isAdmin": false,
+    "name": "gabriel",
+    "email": "Gabriel.r.antonietti@gmail.com",
+    "userName": "asdfasdf",
+    "birth": "1999-02-01",
+    "adress": "asdfsd",
+    "profile": "vender",
+    "interest": [
+      "hogar",
+      "vidaSana"
+    ],
+    "file": null,
+    "password": "$2a$10$j7tCDMIYYTVSsSbGAaty6OXBRO7Ycs5r7zUVjQJPz6vn24PTDpEwe"
+  },
+  {
+    "id": 6,
+    "isAdmin": false,
+    "name": "gabriel",
+    "email": "Gabriel.r.antonietti@gmail.com",
+    "userName": "asdfasdf",
+    "birth": "1111-01-01",
+    "adress": "sdasdf",
+    "profile": "comprar",
+    "interest": "electro",
+    "file": "foto1642878594338.jpg",
+    "password": "$2a$10$XUJ3Rjp24s4JdNf12BqcqeiEaGKFvjjrIyodYTC3rmbUoDeBxxRf."
+  }
+]

@@ -1,0 +1,258 @@
+
+header {
+    display: flex;
+    background-color: #EAC926;
+    box-sizing: border-box;
+    height: 100%;
+    flex-direction: column;
+    
+}
+.header_superior{
+background-color: #EAC926;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+align-items: center;
+padding-top: 2%;
+
+flex-wrap: wrap;
+width: 100%;
+margin-bottom: 20px;
+
+}
+
+
+.laLupita{
+   text-align: justify;
+   background-color: azure;
+}
+.elbuscador{
+align-items: baseline;  
+text-align: justify;
+max-width: 50%;
+
+
+}
+
+.laImagen{
+width: 50vw;
+max-width: 130px;
+
+}
+.search{
+border: none;
+border-radius: 5px;
+width: 70%;
+max-width: 130px;
+margin-left:7px;
+text-align: left;
+padding: 2px 0 2px 2px;
+}
+.copi{
+
+font-size: 12px;
+text-align: right;
+
+}
+
+
+.header_inferior{
+background-color: #EAC926;
+display: flex;
+font-size: 12px;
+justify-content: space-around;
+}
+
+
+
+
+
+
+h2{
+    display: inline;
+}
+
+.burger-menu{
+    color: aliceblue;
+    border-block-color:#03264C ;
+    text-align: center;
+    display: block;
+    padding: 10px;
+    ;
+            
+}
+
+#menu_ {
+    background-color: #03264C;
+    padding: 10px;
+    border-radius: 30%;
+}
+
+.link {
+    color: black;
+    text-decoration: none;
+}
+
+.navegador_izquierda {
+    display:none;
+    
+}
+
+.navegador_derecha {
+    display:none;
+    
+}
+.links {
+    display: block;
+    color: black;
+    text-decoration: none;
+    text-decoration-style: none ;
+
+}
+img  {
+    display: block;
+    max-width: 100%;
+    
+    
+}
+
+
+
+/* queries para tablet */
+@media  (min-width:361px) {
+    
+
+    
+
+    .elpie{
+    
+        text-align: center;
+        justify-content: center;
+           
+        
+    }
+
+    .header_superior{
+        padding: 2% 2% ;
+    }
+    .header_inferior{
+        display: flex;
+        justify-content: space-between;
+        font-size:  9px;
+        margin-bottom: 10px;
+        padding: 2px 10px;
+    }
+    .navegador_derecha{
+        display: flex;
+        flex-direction: row;  
+         
+          
+    }
+    .navegador_izquierda{
+        display: flex;
+        
+        
+    }
+    .links{
+        margin:0px 4px;
+
+    }
+    .burger-menu {
+        display: none;
+    }
+    .elbuscador{
+        max-width: 30%;
+        
+        
+    }
+    .search {
+        max-width: 170px;
+        padding: 4px 0;
+        padding-left: 2px;
+       
+
+    }
+    .copi{
+        max-width: 30%;
+    }
+    
+}
+
+
+@media  (min-width:769px) {
+    
+
+    
+    
+
+    .header_superior{
+        background-color: #EAC926;
+        display: flex;
+        justify-content: space-between;
+        
+        padding: 2% 2% ;
+    
+    }
+    .elbuscador{
+        
+        margin: 0 ;
+        padding: 0;
+        width: 300px;
+        
+    }
+    .search{
+        display:inline-block;
+        margin: 2px auto; 
+        padding-right: 15px;
+        width: 100%;
+    }
+    .laLupita{
+        display: inline;
+
+    }
+    .laImagen {
+        max-width: 250px;
+        width:40vw;
+        margin-left: 7px;
+    }
+    .copi{
+        width: 30vw;
+        font-size: 16px;
+    }
+
+    .header_inferior{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 16px;
+        padding: 2px 10px;
+        
+    }
+    .navegador_derecha{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;  
+        
+        
+        
+    }
+    .navegador_izquierda{
+        display: flex;
+        justify-content: space-between;  
+        
+    }
+
+    .links{
+        margin:0px 7px;
+        
+
+    }
+    .burger-menu{
+        display: none;
+    }
+
+   
+
+    
+
+}

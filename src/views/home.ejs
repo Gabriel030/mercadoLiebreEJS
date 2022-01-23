@@ -1,0 +1,45 @@
+
+<%- include("./includes/head")  %> 
+
+<body>
+    
+    <%- include("./includes/header")  %> 
+
+
+
+    <main class="home-main">
+
+        <h2 class ="ofertas">Basado en tu última búsqueda</h2>
+        <section class="section_search"> 
+            
+            <% if (locals.listAll) { %>
+                    <%- include("./modules/products/articleAll") %> 
+
+            <% }else { %>
+                NO HAY PRODUCTOS 
+                <% } %> 
+
+        </section>
+
+
+        
+        <h2 class="ofertas">Ofertas</h2>
+        
+        <section class="section_off">
+                <% if (locals.listOnSale) { %>
+                        <%- include("./modules/products/articleOnSale") %> 
+    
+                <% }else { %>
+                    NO HAY PRODUCTOS 
+                    <% } %> 
+            
+  
+        </section>
+        
+    </main>
+
+
+    <%- include("./includes/footer")  %> 
+   
+</body>
+</html>

@@ -1,0 +1,104 @@
+
+
+    <%- include("../../includes/head")  %> 
+<body>
+
+    <%- include("../../includes/header")  %> 
+  
+  
+    <main class="home-main">
+
+        
+    <form action="/users/register" class="main-form" method="POST" enctype="multipart/form-data">
+
+        <% if (locals.errors) { %>
+           
+            <% errors.forEach(error => { %>
+                <p class ="feedback-errors">* <%= error.msg %></p>
+    
+            <% }) %>
+
+        <% } %>
+        
+
+        <fieldset class="main-control" >
+            <label class="titulo" for="nombreCompleto">Nombre Completo</label>
+            <input class="entradas" type="text" name="nombreCompleto"  placeholder="Nombre y Apellido" value= <%= locals.old && old.nombreCompleto ? old.nombreCompleto : ""%> >
+        </fieldset>
+        <fieldset class="main-control" >
+            <label  class="titulo" for="email" >Email</label>
+            <input class="entradas" type="text" name="email"  placeholder="Email" value= <%= locals.old && old.email ? old.email : ""%> >
+        </fieldset>
+        <fieldset class="main-control" >
+            <label  class="titulo" for="nombreUsuario" >Nombre De Usuario</label>
+            <input class="entradas" type="text" name="nombreUsuario"  placeholder="Nombre de Usuario" value= <%= locals.old && old.nombreUsuario ? old.nombreUsuario : ""%>>
+        </fieldset>
+
+        <fieldset class="main-control" >
+            <label class="cabecera" for="fechaNacimiento">Fecha Nacimiento</label>
+            <input class="entradas" type="date" name="fechaNacimiento"  value= <%= locals.old && old.fechaNacimiento ? old.fechaNacimiento : ""%>>
+        </fieldset>
+
+        <fieldset  class="main-control" >
+            <label class="cabecera" for="domicilio"></label>
+            <input class="entradas" type="text" name="domicilio"  placeholder="Domicilio" value =<%= locals.old && old.domicilio ? old.domicilio : ""%> >
+        </fieldset>
+        
+        <fieldset class="radio" >
+
+            <label class="cabecera" for="radio">Perfil Del Usuario</label>
+           
+            <input type="radio" name="perfilUser"  value="comprar"  <%= locals.old && old.perfilUser == "comprar" ? "checked" : ""%>>
+            <label class="int" for="comprar">Comprar</label>
+            <input type="radio" name="perfilUser"  value="vender" <%= locals.old && old.perfilUser == "vender" ? "checked" : ""%>>
+            <label class="int" for="vender">Vender</label>
+            
+        </fieldset>
+
+        <fieldset class="checkbox" multiple >
+            <label class="cabecera" for="radio">Intereses</label>
+                
+           
+ 
+                <label  class="int" for="electro">
+                    <input   class="check"  type="checkbox"  name="intereses"  value="electro" id="electro" <%= locals.old && old.intereses == "electro" ? "checked" : null%> >
+                    Electro</label>
+                <label  class="int" for="moda">
+                    <input   class="check"  type="checkbox"  name="intereses"  value="moda" id= "moda" <%= locals.old && old.intereses == "moda" ? "checked" : null%> >Moda</label>
+                <label  class="int" for="hogar"> 
+                    <input   class="check"  type="checkbox"  name="intereses"  value="hogar" id="hogar"  <%= old.intereses == "hogar" ? "checked" : null%> >Hogar</label>
+                <label  class="int" for="jugueteria"> 
+                    <input   class="check"  type="checkbox"  name="intereses"  value="jugueteria" id="jugueteria" <%= old.intereses == "jugueteria" ? "checked" : null%>  >Jugueteria</label>
+                <label  class="int" for="vidaSana"> 
+                    <input   class="check"  type="checkbox"  name="intereses"  value="vidaSana" id="vidaSana"  <%=  old.intereses == "vidaSana" ? "checked" : null%>  >Vida Sana</label>
+            
+        </fieldset>
+
+        <fieldset class="main-control" >
+            <label  class="cabecera" for="foto">Foto De Perfil</label>
+            <input type="file" name="foto"  >
+        </fieldset>
+
+        <fieldset class="main-control" >
+            <label class="titulo" for="pass">Contraseña</label>
+            <input class="entradas" type="password" name="password" id=""  placeholder="Contraseña">
+            <!-- <label class="titulo"  for="pass" >Confirmar Contraseña</label>
+            <input class="entradas" type="password" name="" id="" required placeholder="Confirmar Contraseña"> -->
+        </fieldset>
+       
+        <fieldset class="button">
+           <input class="button-1" type="submit" name="enviar" id="" placeholder="Enviar">
+            <input class="button-1" type="reset" name="borrar" id="" placeholder="Borrar">
+            
+        </fieldset>
+
+        
+    </form>
+
+   </main>
+
+
+    <%- include("../../includes/footer")  %> 
+
+</body>
+</html>

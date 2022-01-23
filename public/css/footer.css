@@ -1,0 +1,54 @@
+.elpie{
+    
+    text-align: center;
+    justify-content: center;
+    background-color:white;
+
+    
+}
+
+.copi2{
+    padding-bottom: 25px;
+    text-align: left;
+    font-size: 12px;
+}
+.mainfooter{
+    margin: 5px 5px;
+    margin-top: 30px;
+    padding: 5px 5px;
+}
+.footeritem{
+    padding: 5px 10px;
+}
+.footerpic {
+color:#1259c3;
+font-size: 24px;
+transition: all 200ms;
+
+}
+.footerpic:hover{
+    color:#EAC926;
+
+}
+
+@media  (min-width:769px){
+
+
+    .mainfooter{
+        display: flex;
+        flex-direction: row;
+        max-width: 100%;
+        margin:5px;
+        margin-top: 30px;
+        padding:5px;
+        justify-content: space-around;
+        align-items:center ;
+    }
+    .footeritem{
+        margin: 10px 15px;
+        padding: 2px 10px;
+
+    }
+
+
+}
