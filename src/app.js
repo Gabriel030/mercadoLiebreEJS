@@ -40,6 +40,8 @@ app.use(express.static(path.resolve(__dirname,"../public")));
 
 app.use(require("./routes/mainRoutes"))
 app.use("/users", require("./routes/usersRoutes"))
+app.use("/products", require("./routes/productsRoutes"))
+
 
 
 

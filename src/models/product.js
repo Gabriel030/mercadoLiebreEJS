@@ -17,11 +17,37 @@ const model = {
     //convieto lo q lei con fs en un array manipulable
     listOnSale: () => JSON.parse(model.readOnSale()),
 
-
     //esta funcion escribe informacion en el json de productos
     writeAllProducts: (data) => fs.writeFileSync(model.allProducts, JSON.stringify( data,null,2)),
 
+    generateId: () => {
+        let allProducts = model.listAll();
+        let lastProduct = allProducts.pop();
+
+        //si existen productos retorna el ultimo id +1, si no existe osea es undefined retorna 1
+        return lastProduct ?  lastProduct.id + 1 : 1 ; 
+
+    },
     
+    newProduct: (data) =>  Object({
+        id: model.generateId(),
+        description: data.descripcion,
+        price: data.precio,
+        discount: data.descuento,
+        category: data.categoria,        
+        image: data.file ? "/images/"+ data.file : null,
+        
+
+    }),
+
+            saveNewProduct: (data) => { 
+            let product = model.newProduct(data)
+            let allProducts = model.listAll();
+
+            allProducts.push(product);
+            model.writeAllProducts(allProducts)
+            return product;
+        }
 }
 
 module.exports = model

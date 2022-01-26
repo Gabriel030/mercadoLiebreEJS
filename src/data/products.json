@@ -1,37 +1,77 @@
 [
-    {
-    "id": 1, 
+  {
+    "id": 1,
     "price": 6770,
     "description": "Cafetera Moulinex",
     "discount": "40%",
+    "category": "Hogar",
     "image": "/images/img-cafetera-moulinex.jpg"
-
-    },
-    {
-    "id": 2, 
+  },
+  {
+    "id": 2,
     "price": 230000,
     "description": "Mac Book Pro 2019",
     "discount": "20%",
+    "category": "Electro",
     "image": "/images/img-macbook-pro-2019.jpg"
-
-    },
-    {
-    "id": 3, 
+  },
+  {
+    "id": 3,
     "price": 70500,
     "description": "Samsung Galaxy S10",
     "discount": "10%",
+    "category": "Electro",
     "image": "/images/img-samsung-galaxy-s10.jpg"
-
-    },
-    {
-    "id": 4, 
+  },
+  {
+    "id": 4,
     "price": 23200,
     "description": "Smart Tv Samsung 43",
     "discount": "5%",
+    "category": "Electro",
     "image": "/images/img-tv-samsung-smart.jpg"
-
-    }
-    
-
-
+  },
+  {
+    "id": 5,
+    "description": "Crema Humectante",
+    "price": "1500",
+    "discount": "5",
+    "category": "vidaSana",
+    "image": "/images/product1643163311173.jpg"
+  },
+  {
+    "id": 6,
+    "description": "Aceite",
+    "price": "500",
+    "discount": "10",
+    "category": "hogar",
+    "image": "/images/product1643163397712.jpg"
+  },
+  {
+    "id": 7,
+    "description": "Cera Auto",
+    "price": "800",
+    "discount": "6",
+    "category": "hogar",
+    "image": "/images/product1643163461254.jpg"
+  },
+  {
+    "id": 8,
+    "description": "Buzo Freeza",
+    "price": "2500",
+    "discount": "15",
+    "category": [
+      "moda",
+      "jugueteria"
+    ],
+    "image": "/images/product1643163535859.jfif"
+  },
+  {
+    "id": 9,
+    "description": "ropa perro",
+    "price": "3000",
+    "discount": "10",
+    "category": "hogar",
+    "image": "/images/product1643163611945.jpeg"
+  }
 ]
