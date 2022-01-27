@@ -10,11 +10,38 @@ const {body} = require("express-validator")
 //q quiero hacer cuando voy a registar
 const validateCreateForm = [
     body("nombreCompleto").notEmpty().withMessage("Debes completar el campo de nombre"),
-    body("email").notEmpty().withMessage("Completa Email").isEmail().withMessage("Debes completar el campo de Email válido"),
+    //cuando hago el bail() detiene las validaciones si salta el primer error 
+    body("email").notEmpty().withMessage("Completa Email").bail().isEmail().withMessage("Debes completar el campo de Email válido"),
     body("nombreUsuario").notEmpty().withMessage("Debes completar el campo de Usuario"),
     body("fechaNacimiento").notEmpty().withMessage("Debes completar el campo de Nacimiento"),
     body("domicilio").notEmpty().withMessage("Debes completar el campo de Domicilio"),
     body("perfilUser").notEmpty().withMessage("Debes completar el campo de perfil"),
+    body("intereses").notEmpty().withMessage("Debes elegir por lo menos un interes"),
+    
+    body("password").notEmpty().withMessage("Debes completar la contraseña"),
+    body("foto").custom((value, {req}) => {
+        let file = req.file;
+        let acepetedExtensions = [".jpg", ".png", ".gif"];
+        //let fileExtension = path.extname(req.file.originalname);
+
+        
+
+
+/*         asi valido subir una Imagen , para mas info buscar en la docu de express-validator 
+ */        if (!file) {
+     //si no subo la imagen entonces creo el error
+            throw new Error("Tienes que subir una imagen")
+        }else {
+//si subo un archivo valido q sea con la extension correcta o adminitda
+            let fileExtension = path.extname(file.originalname);
+        }
+
+        if(!acepetedExtensions.includes(fileExtension)) {
+            throw new Error('Las extensiones permitidas son'+ acepetedExtensions)
+
+        }
+        return true ; 
+    })
     
 ]
 

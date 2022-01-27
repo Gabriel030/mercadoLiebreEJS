@@ -11,38 +11,58 @@
         
     <form action="/users/register" class="main-form" method="POST" enctype="multipart/form-data">
 
-        <% if (locals.errors) { %>
-           
-            <% errors.forEach(error => { %>
-                <p class ="feedback-errors">* <%= error.msg %></p>
-    
-            <% }) %>
-
-        <% } %>
+        
         
 
         <fieldset class="main-control" >
             <label class="titulo" for="nombreCompleto">Nombre Completo</label>
-            <input class="entradas" type="text" name="nombreCompleto"  placeholder="Nombre y Apellido" value= <%= locals.old && old.nombreCompleto ? old.nombreCompleto : ""%> >
+            <input class="entradas " type="text" name="nombreCompleto"  placeholder="Nombre y Apellido" value= <%= locals.old && old.nombreCompleto ? old.nombreCompleto : ""%> >
         </fieldset>
+
+        <% if (locals.errors && errors.nombreCompleto) { %>
+          
+                <p class ="feedback-errors">* <%= errors.nombreCompleto.msg %></p>
+    
+        <% } %>
+
         <fieldset class="main-control" >
             <label  class="titulo" for="email" >Email</label>
             <input class="entradas" type="text" name="email"  placeholder="Email" value= <%= locals.old && old.email ? old.email : ""%> >
         </fieldset>
+        <% if (locals.errors && errors.email) { %>
+          
+            <p class ="feedback-errors">* <%= errors.email.msg %></p>
+
+    <% } %>
         <fieldset class="main-control" >
             <label  class="titulo" for="nombreUsuario" >Nombre De Usuario</label>
             <input class="entradas" type="text" name="nombreUsuario"  placeholder="Nombre de Usuario" value= <%= locals.old && old.nombreUsuario ? old.nombreUsuario : ""%>>
         </fieldset>
+        <% if (locals.errors && errors.nombreUsuario) { %>
+          
+            <p class ="feedback-errors">* <%= errors.nombreUsuario.msg %></p>
+
+    <% } %>
 
         <fieldset class="main-control" >
             <label class="cabecera" for="fechaNacimiento">Fecha Nacimiento</label>
             <input class="entradas" type="date" name="fechaNacimiento"  value= <%= locals.old && old.fechaNacimiento ? old.fechaNacimiento : ""%>>
         </fieldset>
+        <% if (locals.errors && errors.fechaNacimiento) { %>
+          
+            <p class ="feedback-errors">* <%= errors.fechaNacimiento.msg %></p>
+
+    <% } %>
 
         <fieldset  class="main-control" >
             <label class="cabecera" for="domicilio"></label>
             <input class="entradas" type="text" name="domicilio"  placeholder="Domicilio" value =<%= locals.old && old.domicilio ? old.domicilio : ""%> >
         </fieldset>
+        <% if (locals.errors && errors.domicilio) { %>
+          
+            <p class ="feedback-errors">* <%= errors.domicilio.msg %></p>
+
+    <% } %>
         
         <fieldset class="radio" >
 
@@ -52,8 +72,15 @@
             <label class="int" for="comprar">Comprar</label>
             <input type="radio" name="perfilUser"  value="vender" <%= locals.old && old.perfilUser == "vender" ? "checked" : ""%>>
             <label class="int" for="vender">Vender</label>
+
             
         </fieldset>
+
+        <% if (locals.errors && errors.perfilUser) { %>
+          
+            <p class ="feedback-errors">* <%= errors.perfilUser.msg %></p>
+
+    <% } %>
 
         <fieldset class="checkbox" multiple >
             <label class="cabecera" for="radio">Intereses</label>
@@ -61,10 +88,10 @@
            
  
                 <label  class="int" for="electro">
-                    <input   class="check"  type="checkbox"  name="intereses"  value="electro" id="electro" <%= locals.old && old.intereses == "electro" ? "checked" : null%> >
+                    <input   class="check"  type="checkbox"  name="intereses"  value="electro" id="electro" <%= locals.old && (old.intereses == "electro") ? 'checked' : null%> >
                     Electro</label>
                 <label  class="int" for="moda">
-                    <input   class="check"  type="checkbox"  name="intereses"  value="moda" id= "moda" <%= locals.old && old.intereses == "moda" ? "checked" : null%> >Moda</label>
+                    <input   class="check"  type="checkbox"  name="intereses"  value="moda" id= "moda" <%= locals.old && (old.intereses == "moda") ? "checked" : null%> >Moda</label>
                 <label  class="int" for="hogar"> 
                     <input   class="check"  type="checkbox"  name="intereses"  value="hogar" id="hogar"  <%= old.intereses == "hogar" ? "checked" : null%> >Hogar</label>
                 <label  class="int" for="jugueteria"> 
@@ -74,10 +101,22 @@
             
         </fieldset>
 
+        <% if (locals.errors && errors.intereses) { %>
+          
+            <p class ="feedback-errors">* <%= errors.intereses.msg %></p>
+
+    <% } %>
+
         <fieldset class="main-control" >
             <label  class="cabecera" for="foto">Foto De Perfil</label>
             <input type="file" name="foto"  >
         </fieldset>
+        <% if (locals.errors && errors.foto) { %>
+          
+            <p class ="feedback-errors">* <%= errors.foto.msg %></p>
+
+    <% } %>
+
 
         <fieldset class="main-control" >
             <label class="titulo" for="pass">Contraseña</label>
@@ -85,6 +124,12 @@
             <!-- <label class="titulo"  for="pass" >Confirmar Contraseña</label>
             <input class="entradas" type="password" name="" id="" required placeholder="Confirmar Contraseña"> -->
         </fieldset>
+
+        <% if (locals.errors && errors.password) { %>
+          
+            <p class ="feedback-errors">* <%= errors.password.msg %></p>
+
+    <% } %>
        
         <fieldset class="button">
            <input class="button-1" type="submit" name="enviar" id="" placeholder="Enviar">
@@ -100,5 +145,6 @@
 
     <%- include("../../includes/footer")  %> 
 
+    
 </body>
 </html>
