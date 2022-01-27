@@ -82,7 +82,24 @@ const usersController = {
         })
     },
     validateLogin: (req,res) => {
-        res.send("login exitoso")
+        let errors = validationResult(req)
+
+        /* let nombreUsuario = req.body.nombreUsuario;
+        let password = req.body.password; 
+        let userFound = model.findByProperty("nombreUsuario", nombreUsuario)
+        let passwordFound = model.findByProperty("password", password) */
+        
+        if(errors.isEmpty()){
+            res.render("modules/users/dashboardUsers")
+        }else {
+
+            res.render("modules/users/login", {
+                styles: ["header", "footer", "main", "head", "login", "libs","register"],
+                errors:errors.mapped(),
+                old:req.body
+            })
+        }
+
     }
 }
 

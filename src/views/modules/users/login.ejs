@@ -4,17 +4,28 @@
     <%- include("../../includes/header")  %>
 
 <main class ="home-main">
-    <form action="/home" class ="main-form" method ="POST">
+    <form action="/users/login" class ="main-form" method ="POST">
 
         <fieldset class="main-control" >
             <label class="titulo" for="nombreUsuario">Nombre de Usuario</label>
-            <input class="entradas" type="text" name="nombreUsuario" required placeholder="Nombre de Usuario" >
+            <input class="entradas" type="text" name="nombreUsuario"  placeholder="Nombre de Usuario" value = <%= locals.old && old.nombreUsuario ? old.nombreUsuario : ""%> >
         </fieldset>
+        <% if (locals.errors && errors.nombreUsuario) { %>
+          
+            <p class ="feedback-errors">* <%= errors.nombreUsuario.msg %></p>
+
+    <% } %>
         
         <fieldset class="main-control" >
             <label  class="titulo" for="contraseña" >Contraseña</label>
-            <input class="entradas" type="text" name="contraseña" required placeholder="Contraseña">
+            <input class="entradas" type="text" name="contraseña"  placeholder="Contraseña">
         </fieldset>
+
+        <% if (locals.errors && errors.password) { %>
+          
+            <p class ="feedback-errors">* <%= errors.password.msg %></p>
+
+    <% } %>
     
             <fieldset class="button">
                 <input class="button-1" type="submit" name="enviar" id="" placeholder="Enviar">

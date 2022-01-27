@@ -70,8 +70,8 @@ const upload = multer({storage:storage})
 //validaciones para login 
 
 const validateLogin = [
-    body().notEmpty().withMessage("Debes ingresar tu usuario"),
-    body().notEmpty().withMessage("Debes ingresar una contraseña")
+    body("nombreUsuario").notEmpty().withMessage("Debes ingresar tu usuario"),
+    body("password").notEmpty().withMessage("Debes ingresar una contraseña")
 ]
 
 router.get("/register", usersController.createUser)
@@ -81,5 +81,5 @@ router.get("/login", usersController.login)
 //procesamiento de formulario - aqui van los middlewares y las validaciones
 //para las imagenes recordar q dentro de upload.single va el name del input donde subo el archivo
 router.post("/register",upload.single("foto"), validateCreateForm, logDBMiddleware ,usersController.saveUser)
-router.post("/login", usersController.login)
+router.post("/login", validateLogin, usersController.validateLogin)
 module.exports = router
