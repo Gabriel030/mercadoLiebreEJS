@@ -39,6 +39,7 @@ width: 50vw;
 max-width: 130px;
 
 }
+
 .search{
 border: none;
 border-radius: 5px;
@@ -251,7 +252,9 @@ img  {
         display: none;
     }
 
-   
+   .banner{
+       max-width: 100vw;
+   }
 
     
 

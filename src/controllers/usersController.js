@@ -80,6 +80,9 @@ const usersController = {
         res.render("modules/users/login", {
             styles: ["header", "footer", "main", "head", "login", "libs"]
         })
+    },
+    validateLogin: (req,res) => {
+        res.send("login exitoso")
     }
 }
 
