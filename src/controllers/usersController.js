@@ -3,6 +3,10 @@ const model = require("../models/users")
 const bcrypt = require("bcryptjs")
 
 //me traigo esta propiedad q me trae express validator
+// me trae lo q tipie en los input en el formulario
+
+//vildationResult se usa en el controlador
+//body se usa en el router 
 const {validationResult} = require("express-validator")
 
 const usersController = {
@@ -44,8 +48,11 @@ const usersController = {
         }else{ 
             //si existen errores entonces redirijo a la pagina de registro
             return res.render("modules/users/register", {
-                styles: ["header", "footer", "main", "register"],
-                errors: errors.array(),
+                styles: ["header", "footer", "main", "register", "libs"],
+                //en esta varible almaceno errros, y con mapped lo paso de un array a un objeto con mas objetos
+                errors: errors.mapped(),
+                //esta variable old, va a almacenar todo lo q escribio en el formulario el user
+                //de esta manera puedo persistir lo q el user escribio, osea lo trae de nuevo
                 old: req.body
             })
         }
@@ -66,13 +73,16 @@ const usersController = {
     },
     success: (req,res) => { 
         res.render("modules/users/success", {
-            styles: ["header", "footer", "main", "head", "success"]
+            styles: ["header", "footer", "main", "head", "success", "libs"]
         })
     },
     login: (req,res) => {
         res.render("modules/users/login", {
-            styles: ["header", "footer", "main", "head", "login"]
+            styles: ["header", "footer", "main", "head", "login", "libs"]
         })
+    },
+    validateLogin: (req,res) => {
+        res.send("login exitoso")
     }
 }
 

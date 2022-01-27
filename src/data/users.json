@@ -79,5 +79,34 @@
     "interest": "electro",
     "file": "foto1642878594338.jpg",
     "password": "$2a$10$XUJ3Rjp24s4JdNf12BqcqeiEaGKFvjjrIyodYTC3rmbUoDeBxxRf."
+  },
+  {
+    "id": 7,
+    "isAdmin": false,
+    "name": "flavia",
+    "email": "garota@gmail.com",
+    "userName": "antolarenga13",
+    "birth": "1990-05-02",
+    "adress": "dsf 33 400 ",
+    "profile": "comprar",
+    "interest": "moda",
+    "file": "foto1643239803405.jpeg",
+    "password": "$2a$10$2ETGYKkMsErONx8Q5NQPJOAzimytsP6TyQgUCsdcnqsZnPkpzLXGW"
+  },
+  {
+    "id": 8,
+    "isAdmin": false,
+    "name": "pedro",
+    "email": "garota@gmail.com",
+    "userName": "antolarenga13",
+    "birth": "1990-05-02",
+    "adress": "dsf 33 400 ",
+    "profile": "comprar",
+    "interest": [
+      "moda",
+      "jugueteria"
+    ],
+    "file": "/images/foto1643239911306.jpeg",
+    "password": "$2a$10$nADoZ.PsAnx4HPjlTi.tnOJYIZWAle/WZX9WdPHmSTiQ75PngKSXq"
   }
 ]

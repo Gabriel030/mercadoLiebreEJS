@@ -32,7 +32,7 @@ const model = {
             adress: data.domicilio,
             profile: data.perfilUser,
             interest: data.intereses,
-            file: data.file ? data.file : null,
+            file: data.file ? "/images/" + data.file : null,
             //encripto la contraseña
             password: bcrypt.hashSync(data.password)
 

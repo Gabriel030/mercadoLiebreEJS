@@ -3,26 +3,29 @@
 
     <%- include("../../includes/header")  %>
 
+<main class ="home-main">
+    <form action="/home" class ="main-form" method ="POST">
 
-<form action="/home" class ="main-form" method ="POST">
-
-    <fieldset class="main-control" >
-        <label class="titulo" for="nombreUsuario">Nombre de Usuario</label>
-        <input class="entradas" type="text" name="nombreUsuario" required placeholder="Nombre de Usuario" >
-    </fieldset>
-    
-    <fieldset class="main-control" >
-        <label  class="titulo" for="contraseña" >Contraseña</label>
-        <input class="entradas" type="text" name="contraseña" required placeholder="Contraseña">
-    </fieldset>
-
-        <fieldset class="button">
-            <input class="button-1" type="submit" name="enviar" id="" placeholder="Enviar">
-            
-            
+        <fieldset class="main-control" >
+            <label class="titulo" for="nombreUsuario">Nombre de Usuario</label>
+            <input class="entradas" type="text" name="nombreUsuario" required placeholder="Nombre de Usuario" >
         </fieldset>
+        
+        <fieldset class="main-control" >
+            <label  class="titulo" for="contraseña" >Contraseña</label>
+            <input class="entradas" type="text" name="contraseña" required placeholder="Contraseña">
+        </fieldset>
+    
+            <fieldset class="button">
+                <input class="button-1" type="submit" name="enviar" id="" placeholder="Enviar">
+                
+                
+            </fieldset>
+    
+    </form>
 
-</form>
+</main>
+
 
 
 <%- include("../../includes/footer")  %>
