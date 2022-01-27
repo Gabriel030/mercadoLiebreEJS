@@ -36,7 +36,7 @@ const productsController = {
             let newProduct = req.body ; 
             let registered = model.saveNewProduct(newProduct) 
     
-            return res.redirect("create")
+            return res.redirect("create") 
 
         }else{ 
             //si existen errores entonces redirijo a la pagina de registro

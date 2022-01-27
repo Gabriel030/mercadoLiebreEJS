@@ -40,6 +40,7 @@ const upload = multer({storage:storage})
 //const uploead = multer({storage})
 
 //------------------------------------------------------------------------------
+//validaciones para login 
 
 
 router.get("/register", usersController.createUser)
