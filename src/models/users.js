@@ -62,7 +62,7 @@ const model = {
 
         let allUsers = model.listAllUsers();
         let userFound = allUsers.find(oneUser => oneUser[property] == value)
-        return userFound ? true : false;
+        return userFound ? userFound : false;
     },
     delete: (id) => {
         let allUsers = model.listAllUsers();

@@ -39,11 +39,33 @@ const usersController = {
         if (errors.isEmpty() ) { 
             
             //si errores esta vacio, no hay errores entonces creo el usuario
-            
+
+           //VALIDACION DEL EMAIL
+            let userInDB = model.findByProperty("email", req.body.email)
+            //busco al usuario en la db por email, si este if da true entonces
+            if(userInDB){
+                
+                return res.render("modules/users/register", {
+                    styles: ["header", "footer", "main", "register", "libs"],
+                    
+                    //en esta varible almaceno errros, y con mapped lo paso de un array a un objeto con mas objetos
+                    errors: {
+                        email: {
+                            msg: "Este email ya esta registrado"
+                        }
+                    },
+                    //esta variable old, va a almacenar todo lo q escribio en el formulario el user
+                    //de esta manera puedo persistir lo q el user escribio, osea lo trae de nuevo
+                    old: req.body
+                })
+                
+            }
+
+
             let newUser = req.body ; 
             let registered = model.saveNewUser(newUser) 
     
-            return res.redirect("success")
+            return res.redirect("login")
 
         }else{ 
             //si existen errores entonces redirijo a la pagina de registro
@@ -56,20 +78,7 @@ const usersController = {
                 old: req.body
             })
         }
-
-
-
-
-        
-
-        
-        
-
-
-        
-
-       
-                       
+                
     },
     success: (req,res) => { 
         res.render("modules/users/success", {
@@ -78,29 +87,71 @@ const usersController = {
     },
     login: (req,res) => {
         res.render("modules/users/login", {
-            styles: ["header", "footer", "main", "head", "login", "libs"]
+            styles: ["main", "head", "login", "libs"]
         })
     },
     validateLogin: (req,res) => {
-        let errors = validationResult(req)
-
-        /* let nombreUsuario = req.body.nombreUsuario;
-        let password = req.body.password; 
-        let userFound = model.findByProperty("nombreUsuario", nombreUsuario)
-        let passwordFound = model.findByProperty("password", password) */
         
-        if(errors.isEmpty()){
-            res.render("modules/users/dashboardUsers")
-        }else {
+            let userToLogin = model.findByProperty("email", req.body.email)
+            
+            //verificar si esta el mail
+            if(userToLogin){
+                //verificar si el password esta ok
+                let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
+                        if(isOkThePassword ){
+                            //antes de dirigir al usuario a su perfil tengo q guardarlo en una session
 
-            res.render("modules/users/login", {
-                styles: ["header", "footer", "main", "head", "login", "libs","register"],
-                errors:errors.mapped(),
-                old:req.body
-            })
-        }
+                            req.session.userLogged = userToLogin;
+                            //borro el password de la sesion para no tenerlo mientras el user este en sesion
+                            delete userToLogin.password
+                            return res.redirect("/users/profile")
+ 
+                        }else{
 
-    }
+                            res.render("modules/users/login", {
+                                styles: ["main", "head", "login", "libs"],
+                                errors:{
+                                    password:{
+                                        msg:"password incorrecto"
+                                    }
+                                },
+                                old:req.body
+                         })
+                        }
+    
+
+             }else{
+                 //si el password no esta ok mostrar un error 
+                 res.render("modules/users/login", {
+                    styles: ["main", "head", "login", "libs"],
+                    errors:{
+                        email:{
+                            msg:"Email no esta registrado"
+                        }
+                    },
+                    old:req.body
+                })
+                 
+
+
+
+             }
+
+             
+
+
+    /* res.render("modules/users/login", {
+        styles: ["header", "footer", "main", "head", "login", "libs","register"],
+        errors:errors.mapped(),
+        old:req.body
+    }) */
+},
+profile: (req,res) => {
+    return res.render("modules/users/profile", {
+        user: req.session.userLogged,
+        styles: ["main", "head", "login", "libs"]
+    });
+}
 }
 
 module.exports = usersController

@@ -74,7 +74,13 @@ header {
     justify-content: space-around;
 }
 
+.feedback-errors{
+    color: rgb(170, 3, 3) ;
+    font-size: 16px;
 
+    margin: 5px auto;
+
+}
 
 
 
@@ -144,7 +150,7 @@ body {
 }
 
 
-form .main-control {
+ .main-control {
   
     display: flex;
     flex-direction: column;
@@ -204,12 +210,31 @@ label {
     font-size: 16px;
     font-style:oblique;
     
+    
+    
+
+}
+
+.main-form{
+    margin:auto 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+}
+
+.main-control,.feedback-errors {
+    width: 100%;
 
 }
 
 
+
+
+
 /* queries para tablet */
-@media  (min-width:361px) {
+@media  (min-width:361px), (max-width:768px) {
     
 
     article {
@@ -230,6 +255,7 @@ label {
         font-size:  9px;
         margin-bottom: 10px;
         padding: 2px 10px;
+        align-items: center;
     }
     .navegador_derecha{
         display: flex;
@@ -255,12 +281,26 @@ label {
 
     }
     .copi{
-        max-width: 30%;
+        max-width: 100%;
+        
     }
 
     .main-form{
-        margin:auto 20%;
+        margin:auto 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center ;
+
     }
+    .main-control,.feedback-errors {
+        width: 100%;
+
+    }
+    .feedback-errors{
+        margin-left: 15%;
+    }
+    
 }
 
 
@@ -350,8 +390,19 @@ label {
     }
 
     .main-form{
-        margin:auto 20%;
+        margin:auto 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center ;
+
     }
     
+    .main-control,.feedback-errors {
+        width: 100%;
 
+    }
+    .feedback-errors{
+        margin-left: 15%;
+    }
 }

@@ -1,5 +1,6 @@
 //traer las funcinoalidades de express
 
+const session = require("express-session")
 const express = require("express")
 const path = require("path")
 const app = express()
@@ -17,6 +18,14 @@ app.set("views", path.resolve(__dirname, "views"));
 app.use(logMiddleware);
 
 app.use(express.urlencoded({extended: false}))
+
+//configuro el session
+//es un objeto literla  q vive el el request, req.session 
+app.use(session({
+    secret: "shh its a secret",
+    resave: false,
+    saveUninitialized: false,
+}))
 
 
 // definir el observador

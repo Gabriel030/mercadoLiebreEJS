@@ -7,18 +7,18 @@
     <form action="/users/login" class ="main-form" method ="POST">
 
         <fieldset class="main-control" >
-            <label class="titulo" for="nombreUsuario">Nombre de Usuario</label>
-            <input class="entradas" type="text" name="nombreUsuario"  placeholder="Nombre de Usuario" value = <%= locals.old && old.nombreUsuario ? old.nombreUsuario : ""%> >
+            <label class="titulo" for="email">Email</label>
+            <input class="entradas" type="email" name="email"  placeholder="Email" value = <%= locals.old && old.email ? old.email : ""%> >
         </fieldset>
-        <% if (locals.errors && errors.nombreUsuario) { %>
+        <% if (locals.errors && errors.email) { %>
           
-            <p class ="feedback-errors">* <%= errors.nombreUsuario.msg %></p>
+            <p class ="feedback-errors">* <%= errors.email.msg %></p>
 
     <% } %>
         
         <fieldset class="main-control" >
-            <label  class="titulo" for="contraseña" >Contraseña</label>
-            <input class="entradas" type="text" name="contraseña"  placeholder="Contraseña">
+            <label  class="titulo" for="password" >Contraseña</label>
+            <input class="entradas" type="password" name="password"  placeholder="Contraseña">
         </fieldset>
 
         <% if (locals.errors && errors.password) { %>
